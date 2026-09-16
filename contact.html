@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تماس با من | جمال</title>
+
+    <meta name="description"
+          content="راه‌های ارتباط با جمال">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #070b1a;
+            color: white;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* نورهای پس زمینه */
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            background: #7c3aed;
+
+            border-radius: 50%;
+
+            filter: blur(150px);
+
+            opacity: 0.35;
+
+            top: -180px;
+            right: -120px;
+
+            z-index: -1;
+
+            animation: moveLight 8s infinite alternate;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            background: #2563eb;
+
+            border-radius: 50%;
+
+            filter: blur(150px);
+
+            opacity: 0.3;
+
+            bottom: -150px;
+            left: -100px;
+
+            z-index: -1;
+        }
+
+        @keyframes moveLight {
+
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-100px, 100px);
+            }
+
+        }
+
+        /* هدر */
+
+        header {
+            position: sticky;
+
+            top: 0;
+
+            z-index: 999;
+
+            background:
+                rgba(7, 11, 26, 0.78);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 18px 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #60a5fa,
+                    #a78bfa,
+                    #f472b6
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+        nav {
+
+            display: flex;
+
+            gap: 22px;
+        }
+
+        nav a {
+
+            color: #e5e7eb;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+
+            color: #60a5fa;
+        }
+
+        /* محتوای تماس */
+
+        .container {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 80px 20px;
+        }
+
+        .contact-box {
+
+            text-align: center;
+
+            padding: 50px 30px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.25);
+
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(40px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        .icon {
+
+            font-size: 70px;
+
+            margin-bottom: 15px;
+
+            animation:
+                float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,100% {
+
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px);
+            }
+
+        }
+
+        h1 {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #60a5fa,
+                    #a78bfa,
+                    #f472b6
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+        .intro {
+
+            color: #aeb7c9;
+
+            font-size: 18px;
+
+            margin-bottom: 40px;
+        }
+
+        /* کارت های ارتباط */
+
+        .contact-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 30px;
+        }
+
+        .contact-card {
+
+            display: block;
+
+            padding: 25px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 18px;
+
+            transition: 0.35s;
+        }
+
+        .contact-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(96,165,250,0.5);
+
+            box-shadow:
+                0 15px 40px
+                rgba(37,99,235,0.2);
+        }
+
+        .contact-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-card h3 {
+
+            margin-bottom: 5px;
+        }
+
+        .contact-card p {
+
+            color: #9ca3af;
+
+            font-size: 14px;
+        }
+
+        /* دکمه */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding: 14px 32px;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #7c3aed
+                );
+
+            box-shadow:
+                0 0 25px
+                rgba(37,99,235,0.4);
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 0 40px
+                rgba(124,58,237,0.6);
+        }
+
+        /* فوتر */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #6b7280;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        /* موبایل */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .container {
+
+                padding:
+                    50px 15px;
+            }
+
+            .contact-box {
+
+                padding:
+                    40px 20px;
+            }
+
+            h1 {
+
+                font-size: 32px;
+            }
+
+            .intro {
+
+                font-size: 16px;
+            }
+
+            .contact-list {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- منوی سایت -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                جمال 🚀
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    خانه
+                </a>
+
+                <a href="about.html">
+                    درباره من
+                </a>
+
+                <a href="index.html#services">
+                    خدمات
+                </a>
+
+                <a href="contact.html">
+                    تماس
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- بخش تماس -->
+
+    <main class="container">
+
+        <div class="contact-box">
+
+            <div class="icon">
+                📩
+            </div>
+
+            <h1>
+                تماس با <span>من</span>
+            </h1>
+
+            <p class="intro">
+                اگر خواستی با من در ارتباط باشی،
+                می‌تونی از راه‌های زیر استفاده کنی.
+            </p>
+
+
+            <div class="contact-list">
+
+
+                <a
+                    href="mailto:example@gmail.com"
+                    class="contact-card"
+                >
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <h3>
+                        ایمیل
+                    </h3>
+
+                    <p>
+                        example@gmail.com
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="contact-card"
+                >
+
+                    <div class="contact-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        شبکه اجتماعی
+                    </h3>
+
+                    <p>
+                        به‌زودی اضافه می‌شود
+                    </p>
+
+                </a>
+
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="button"
+            >
+                🏠 برگشت به صفحه اصلی
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 | ساخته شده با ❤️ و 🚀
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
