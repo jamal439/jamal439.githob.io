@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>درباره من | سایت من</title>
+
+    <meta name="description" content="درباره من و مسیر یادگیری و ساخت پروژه‌های آنلاین">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            color: white;
+            background: #070b1a;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* نورهای پس زمینه */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: #7c3aed;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+            top: -180px;
+            right: -120px;
+            z-index: -1;
+            animation: lightMove 8s infinite alternate;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: #2563eb;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+            bottom: -150px;
+            left: -100px;
+            z-index: -1;
+        }
+
+        @keyframes lightMove {
+
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-80px, 100px);
+            }
+
+        }
+
+        /* هدر */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(7, 11, 26, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 18px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #60a5fa,
+                    #a78bfa,
+                    #f472b6
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* محتوای اصلی */
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .about-box {
+            text-align: center;
+
+            padding: 50px 30px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.25);
+
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .emoji {
+            font-size: 65px;
+            margin-bottom: 15px;
+
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #60a5fa,
+                    #a78bfa,
+                    #f472b6
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .intro {
+            color: #aeb7c9;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        /* کارت ها */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .skill {
+            padding: 25px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(96,165,250,0.5);
+
+            box-shadow:
+                0 15px 35px rgba(37,99,235,0.15);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* دکمه */
+
+        .button {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding: 13px 30px;
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #7c3aed
+                );
+
+            box-shadow:
+                0 0 25px rgba(37,99,235,0.35);
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 35px rgba(124,58,237,0.6);
+        }
+
+        /* فوتر */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            color: #6b7280;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        /* موبایل */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                padding: 50px 15px;
+            }
+
+            .about-box {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .intro {
+                font-size: 16px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                سایت من 🚀
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    خانه
+                </a>
+
+                <a href="about.html">
+                    درباره من
+                </a>
+
+                <a href="index.html#services">
+                    خدمات
+                </a>
+
+                <a href="index.html#contact">
+                    تماس
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="about-box">
+
+            <div class="emoji">
+                👋
+            </div>
+
+            <h1>
+                درباره <span>من</span>
+            </h1>
+
+            <p class="intro">
+                سلام! من جمال هستم.
+                این سایت رو به عنوان شروع یک پروژه بزرگ‌تر ساختم
+                و قراره قدم‌به‌قدم توسعه‌اش بدم.
+            </p>
+
+
+            <div class="skills">
+
+
+                <div class="skill">
+
+                    <div class="skill-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        تکنولوژی
+                    </h3>
+
+                    <p>
+                        علاقه‌مند به دنیای کامپیوتر،
+                        برنامه‌نویسی و تکنولوژی.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        طراحی سایت
+                    </h3>
+
+                    <p>
+                        در حال یادگیری ساخت و توسعه
+                        سایت‌های اینترنتی.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        SEO
+                    </h3>
+
+                    <p>
+                        علاقه‌مند به یادگیری سئو و
+                        افزایش بازدید سایت.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        هدف
+                    </h3>
+
+                    <p>
+                        ساخت پروژه‌های آنلاین و
+                        توسعه مهارت‌های جدید.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="button"
+            >
+                برگشت به صفحه اصلی 🏠
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 | ساخته شده با ❤️ و 🚀
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
