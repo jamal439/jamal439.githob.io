@@ -1,57 +1,198 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت من</title>
+
+    <title>سایت من | صفحه اصلی</title>
+
+    <meta name="description" content="به سایت من خوش آمدید. اینجا اولین قدم‌های پروژه من را دنبال کنید.">
 
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
+            padding: 0;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.8;
         }
 
         header {
             background: #111827;
             color: white;
             padding: 20px;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
 
         nav {
-            margin-top: 15px;
+            display: flex;
+            gap: 20px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
         }
 
         .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        }
+
+        .hero-content {
+            max-width: 750px;
         }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #555;
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
+            padding: 14px 30px;
             background: #2563eb;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6b7280;
+        }
+
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 65vh;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
         }
     </style>
 </head>
@@ -59,24 +200,115 @@
 <body>
 
     <header>
-        <h2>سایت من</h2>
+        <div class="navbar">
 
-        <nav>
-            <a href="#">خانه</a>
-            <a href="#">درباره من</a>
-            <a href="#">تماس با من</a>
-        </nav>
+            <div class="logo">
+                سایت من 🚀
+            </div>
+
+            <nav>
+                <a href="#">خانه</a>
+                <a href="#about">درباره من</a>
+                <a href="#services">خدمات</a>
+                <a href="#contact">تماس</a>
+            </nav>
+
+        </div>
     </header>
 
+
     <section class="hero">
-        <h1>سلام، خوش اومدی 👋</h1>
 
-        <p>
-            این اولین نسخه از سایت منه.
-        </p>
+        <div class="hero-content">
 
-        <a href="#" class="button">شروع کنیم 🚀</a>
+            <h1>
+                سلام، خوش اومدی 👋
+            </h1>
+
+            <p>
+                اینجا قراره قدم‌به‌قدم یک سایت واقعی و حرفه‌ای بسازیم.
+            </p>
+
+            <a href="#services" class="button">
+                شروع کنیم 🚀
+            </a>
+
+        </div>
+
     </section>
 
+
+    <section class="section" id="about">
+
+        <h2>درباره این سایت</h2>
+
+        <p class="section-intro">
+            این سایت اولین قدم پروژه ماست و قراره کم‌کم امکانات بیشتری بهش اضافه کنیم.
+        </p>
+
+    </section>
+
+
+    <section class="section" id="services">
+
+        <h2>چه چیزهایی اینجا خواهیم داشت؟</h2>
+
+        <p class="section-intro">
+            این بخش‌ها در مراحل بعدی کامل‌تر می‌شوند.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>مطالب آموزشی</h3>
+                <p>
+                    مطالب مفید و آموزشی در موضوعات مختلف.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>پروژه‌ها</h3>
+                <p>
+                    پروژه‌ها و کارهایی که در طول مسیر ساخته می‌شوند.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔎</div>
+                <h3>مطالب کاربردی</h3>
+                <p>
+                    محتواهایی که بتوانند برای کاربران مفید باشند.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="contact">
+
+        <h2>تماس با من</h2>
+
+        <p class="section-intro">
+            این بخش را در مرحله بعد با اطلاعات تماس واقعی کامل می‌کنیم.
+        </p>
+
+        <a href="#" class="button">
+            تماس با من 📩
+        </a>
+
+    </section>
+
+
+    <footer>
+        <p>
+            © 2026 تمامی حقوق محفوظ است.
+        </p>
+    </footer>
+
 </body>
+
 </html>
