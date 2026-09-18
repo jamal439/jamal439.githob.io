@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>سایت من | صفحه اصلی</title>
+    <title>جمال | سایت شخصی</title>
 
-    <meta name="description" content="به سایت من خوش آمدید">
+    <meta name="description" content="سایت شخصی جمال؛ طراحی سایت، تکنولوژی و یادگیری SEO.">
 
     <style>
-
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -23,67 +21,35 @@
 
         body {
             font-family: Tahoma, Arial, sans-serif;
-            color: white;
             background: #070b1a;
+            color: white;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
-
-        /* پس زمینه نورانی */
-
-        body::before {
-            content: "";
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: #6d28d9;
-            border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.35;
-            top: -200px;
-            right: -150px;
-            z-index: -1;
-            animation: moveLight 8s infinite alternate;
-        }
-
+        body::before,
         body::after {
             content: "";
             position: fixed;
-            width: 400px;
-            height: 400px;
-            background: #2563eb;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.3;
-            bottom: -150px;
-            left: -100px;
+            filter: blur(100px);
+            opacity: 0.25;
             z-index: -1;
-            animation: moveLight2 10s infinite alternate;
         }
 
-
-        @keyframes moveLight {
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(-100px, 120px);
-            }
+        body::before {
+            background: #7c3aed;
+            top: 50px;
+            left: -100px;
         }
 
-        @keyframes moveLight2 {
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(120px, -100px);
-            }
+        body::after {
+            background: #2563eb;
+            bottom: 50px;
+            right: -100px;
         }
-
-
-        /* هدر */
 
         header {
             position: sticky;
@@ -94,7 +60,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
-        .navbar {
+        .nav-container {
             max-width: 1100px;
             margin: auto;
             padding: 18px 20px;
@@ -102,307 +68,185 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-
-            background: linear-gradient(
-                90deg,
-                #60a5fa,
-                #a78bfa,
-                #f472b6
-            );
-
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #a78bfa;
+            white-space: nowrap;
         }
 
         nav {
             display: flex;
-            gap: 25px;
+            gap: 22px;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: #e5e7eb;
+            color: #ddd;
             text-decoration: none;
+            font-size: 15px;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #60a5fa;
+            color: #a78bfa;
         }
-
-
-        /* بخش اصلی */
 
         .hero {
-            min-height: 85vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+            max-width: 1000px;
+            margin: auto;
+            padding: 120px 20px 100px;
             text-align: center;
-
-            padding: 60px 20px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(37,99,235,0.15),
-                    transparent 50%
-                );
         }
-
-        .hero-content {
-            max-width: 800px;
-
-            animation: appear 1.2s ease;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
 
         .badge {
             display: inline-block;
-
-            padding: 8px 18px;
-
-            border-radius: 50px;
-
-            background: rgba(96,165,250,0.1);
-
-            border: 1px solid rgba(96,165,250,0.3);
-
-            color: #93c5fd;
-
+            padding: 10px 18px;
             margin-bottom: 25px;
 
-            animation: float 3s infinite ease-in-out;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 50px;
+
+            color: #c4b5fd;
+            font-size: 14px;
         }
-
-        @keyframes float {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
 
         .hero h1 {
-            font-size: 55px;
-            margin-bottom: 20px;
-
-            line-height: 1.3;
+            font-size: clamp(38px, 7vw, 72px);
+            margin-bottom: 25px;
+            line-height: 1.2;
         }
 
         .hero h1 span {
-            background:
-                linear-gradient(
-                    90deg,
-                    #60a5fa,
-                    #a78bfa,
-                    #f472b6
-                );
-
-            -webkit-background-clip: text;
-
-            color: transparent;
-
-            background-size: 200%;
-
-            animation: gradient 4s infinite linear;
+            color: #a78bfa;
         }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0%;
-            }
-
-            100% {
-                background-position: 200%;
-            }
-        }
-
 
         .hero p {
-            color: #aeb7c9;
-            font-size: 19px;
-            margin-bottom: 35px;
+            color: #b8bdd0;
+            font-size: 18px;
+            line-height: 2;
+            max-width: 700px;
+            margin: auto;
         }
-
-
-        /* دکمه */
 
         .button {
             display: inline-block;
+            margin-top: 35px;
+            padding: 14px 28px;
 
-            padding: 15px 35px;
-
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
             color: white;
 
             text-decoration: none;
-
             border-radius: 12px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #2563eb,
-                    #7c3aed
-                );
-
-            box-shadow:
-                0 0 20px rgba(37,99,235,0.4);
+            font-weight: bold;
 
             transition: 0.3s;
-
-            position: relative;
-
-            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(124,58,237,0.25);
         }
 
         .button:hover {
-            transform: translateY(-5px) scale(1.03);
-
-            box-shadow:
-                0 0 35px rgba(124,58,237,0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(124,58,237,0.4);
         }
-
-
-        /* بخش ها */
 
         .section {
             max-width: 1100px;
             margin: auto;
-
             padding: 80px 20px;
-
-            text-align: center;
         }
 
         .section h2 {
-            font-size: 35px;
+            text-align: center;
+            font-size: 34px;
             margin-bottom: 15px;
         }
 
         .section-intro {
-            color: #9ca3af;
-            margin-bottom: 45px;
+            text-align: center;
+            color: #9ca3b5;
+            line-height: 2;
+            margin-bottom: 40px;
         }
-
-
-        /* کارت ها */
 
         .cards {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
 
         .card {
-
-            padding: 35px 25px;
-
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px;
-
-            background:
-                rgba(255,255,255,0.06);
-
-            border:
-                1px solid rgba(255,255,255,0.1);
+            padding: 30px;
 
             backdrop-filter: blur(15px);
 
-            transition: 0.4s;
-
-            box-shadow:
-                0 10px 40px rgba(0,0,0,0.2);
+            transition: 0.3s;
         }
 
         .card:hover {
-
-            transform:
-                translateY(-10px);
-
-            border-color:
-                rgba(96,165,250,0.5);
-
-            box-shadow:
-                0 15px 50px rgba(37,99,235,0.2);
+            transform: translateY(-8px);
+            border-color: rgba(167,139,250,0.4);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
         }
 
         .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
+            font-size: 40px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            margin-bottom: 10px;
+            font-size: 21px;
+            margin-bottom: 15px;
         }
 
         .card p {
-            color: #9ca3af;
+            color: #aeb4c7;
+            line-height: 1.9;
         }
 
+        .project-status {
+            display: inline-block;
+            margin-top: 20px;
+            color: #c4b5fd;
+            font-size: 13px;
+        }
 
-        /* فوتر */
+        .contact-box {
+            text-align: center;
+            padding: 45px 20px;
+
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 25px;
+        }
 
         footer {
-            padding: 30px;
-
             text-align: center;
-
-            color: #6b7280;
-
-            border-top:
-                1px solid rgba(255,255,255,0.08);
+            padding: 30px 20px;
+            color: #777e93;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
+        @media (max-width: 800px) {
 
-        /* موبایل */
-
-        @media (max-width: 700px) {
-
-            .navbar {
+            .nav-container {
                 flex-direction: column;
-                gap: 15px;
             }
 
             nav {
-                gap: 15px;
-                flex-wrap: wrap;
                 justify-content: center;
+                gap: 14px;
             }
 
             .hero {
-                min-height: 75vh;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero p {
-                font-size: 17px;
+                padding-top: 80px;
             }
 
             .cards {
@@ -410,208 +254,221 @@
             }
 
             .section {
-                padding: 60px 20px;
+                padding: 60px 18px;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+<header>
+    <div class="nav-container">
 
-    <header>
-
-        <div class="navbar">
-
-            <div class="logo">
-                سایت من 🚀
-            </div>
-
-            <nav>
-
-                <a href="#">خانه</a>
-
-                <a href="#about">
-                    درباره من
-                </a>
-
-                <a href="#services">
-                    خدمات
-                </a>
-
-                <a href="#contact">
-                    تماس
-                </a>
-
-            </nav>
-
+        <div class="logo">
+            جمال 🚀
         </div>
 
-    </header>
+        <nav>
+            <a href="index.html">خانه</a>
+            <a href="about.html">درباره من</a>
+            <a href="#services">خدمات</a>
+            <a href="#projects">پروژه‌ها</a>
+            <a href="contact.html">تماس</a>
+        </nav>
+
+    </div>
+</header>
 
 
+<main>
+
+    <!-- HERO -->
 
     <section class="hero">
 
-        <div class="hero-content">
+        <div class="badge">
+            ✨ خوش اومدی به سایت من
+        </div>
 
-            <div class="badge">
-                ✨ به سایت من خوش آمدید
+        <h1>
+            سلام، من <span>جمال</span> هستم 👋
+        </h1>
+
+        <p>
+            اینجا قراره قدم‌به‌قدم یک سایت واقعی، جذاب و حرفه‌ای بسازیم.
+            این تازه شروع مسیر منه 🚀
+        </p>
+
+        <a href="#projects" class="button">
+            دیدن پروژه‌ها 🚀
+        </a>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="section" id="services">
+
+        <h2>
+            خدمات 💻
+        </h2>
+
+        <p class="section-intro">
+            حوزه‌هایی که در مسیر یادگیری و فعالیت روی آن‌ها تمرکز دارم.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💻</div>
+
+                <h3>
+                    طراحی سایت
+                </h3>
+
+                <p>
+                    ساخت و طراحی صفحات وب مدرن و واکنش‌گرا با HTML و CSS.
+                </p>
             </div>
 
-            <h1>
-                سلام، من <span>جمال</span> هستم 👋
-            </h1>
 
-            <p>
-                اینجا قراره یک پروژه ساده رو
-                کم‌کم به یک سایت واقعی و حرفه‌ای تبدیل کنیم.
+            <div class="card">
+                <div class="icon">🌐</div>
+
+                <h3>
+                    تکنولوژی
+                </h3>
+
+                <p>
+                    یادگیری و تجربه تکنولوژی‌های مختلف در دنیای وب و برنامه‌نویسی.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🔎</div>
+
+                <h3>
+                    SEO
+                </h3>
+
+                <p>
+                    یادگیری اصول سئو و بهینه‌سازی سایت برای موتورهای جستجو.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="section" id="projects">
+
+        <h2>
+            پروژه‌های من 💻🚀
+        </h2>
+
+        <p class="section-intro">
+            پروژه‌هایی که در مسیر یادگیری و توسعه روی آن‌ها کار می‌کنم.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🌐</div>
+
+                <h3>
+                    سایت شخصی
+                </h3>
+
+                <p>
+                    اولین پروژه وب من که با HTML و CSS ساخته شده و روی GitHub Pages قرار گرفته است.
+                </p>
+
+                <span class="project-status">
+                    در حال توسعه 🚀
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🔎</div>
+
+                <h3>
+                    پروژه SEO
+                </h3>
+
+                <p>
+                    یک پروژه تمرینی برای یادگیری سئو و بهینه‌سازی سایت.
+                </p>
+
+                <span class="project-status">
+                    به‌زودی ✨
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">⚡</div>
+
+                <h3>
+                    پروژه آینده
+                </h3>
+
+                <p>
+                    پروژه‌های بزرگ‌تر در ادامه مسیر طراحی سایت و برنامه‌نویسی.
+                </p>
+
+                <span class="project-status">
+                    Coming Soon 🔥
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="section" id="contact">
+
+        <div class="contact-box">
+
+            <h2>
+                تماس با من 📩
+            </h2>
+
+            <p class="section-intro">
+                برای ارتباط بیشتر می‌تونی وارد صفحه تماس بشی.
             </p>
 
-            <a
-                href="#services"
-                class="button"
-            >
-                شروع کنیم 🚀
+            <a href="contact.html" class="button">
+                صفحه تماس 📩
             </a>
 
         </div>
 
     </section>
 
+</main>
 
 
-    <section
-        class="section"
-        id="about"
-    >
+<footer>
 
-        <h2>
-            درباره این پروژه
-        </h2>
+    © 2026 | ساخته شده با ❤️ و 🚀
 
-        <p class="section-intro">
-            این سایت اولین قدم ماست و قراره
-            مرحله‌به‌مرحله امکانات بیشتری بهش اضافه کنیم.
-        </p>
-
-    </section>
-
-
-
-    <section
-        class="section"
-        id="services"
-    >
-
-        <h2>
-            امکانات سایت
-        </h2>
-
-        <p class="section-intro">
-            بخش‌های مختلف پروژه
-        </p>
-
-
-        <div class="cards">
-
-
-            <div class="card">
-
-                <div class="icon">
-                    💻
-                </div>
-
-                <h3>
-                    پروژه‌ها
-                </h3>
-
-                <p>
-                    پروژه‌ها و کارهایی که در این مسیر ساخته می‌شوند.
-                </p>
-
-            </div>
-
-
-
-            <div class="card">
-
-                <div class="icon">
-                    🚀
-                </div>
-
-                <h3>
-                    آموزش
-                </h3>
-
-                <p>
-                    مطالب آموزشی و کاربردی برای یادگیری بهتر.
-                </p>
-
-            </div>
-
-
-
-            <div class="card">
-
-                <div class="icon">
-                    🔎
-                </div>
-
-                <h3>
-                    مطالب کاربردی
-                </h3>
-
-                <p>
-                    محتواهای مفید برای کاربران سایت.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <section
-        class="section"
-        id="contact"
-    >
-
-        <h2>
-            تماس با من 📩
-        </h2>
-
-        <p class="section-intro">
-            این قسمت رو در مرحله بعد کامل می‌کنیم.
-        </p>
-
-        <a
-            href="#"
-            class="button"
-        >
-            ارتباط با من
-        </a>
-
-    </section>
-
-
-
-    <footer>
-
-        <p>
-            © 2026 | ساخته شده با ❤️ و کلی 🚀
-        </p>
-
-    </footer>
-
+</footer>
 
 </body>
-
 </html>
