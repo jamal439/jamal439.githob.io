@@ -464,7 +464,43 @@
     <!-- خدمات -->
 
     <section
-        class="section"
+        class="<section class="section" id="projects">
+    <h2>پروژه‌های من 💻🚀</h2>
+    <p class="section-intro">
+        اینجا پروژه‌هایی که در مسیر یادگیری و کار روی آن‌ها هستم نمایش داده می‌شوند.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>سایت شخصی</h3>
+            <p>
+                اولین پروژه وب من با HTML و CSS که روی GitHub Pages منتشر شده است.
+            </p>
+            <span class="project-status">در حال توسعه 🚀</span>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔎</div>
+            <h3>پروژه SEO</h3>
+            <p>
+                یک پروژه تمرینی برای یادگیری سئو و بهینه‌سازی سایت برای موتورهای جستجو.
+            </p>
+            <span class="project-status">به‌زودی ✨</span>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>پروژه آینده</h3>
+            <p>
+                یک پروژه بزرگ‌تر که در ادامه مسیر طراحی و برنامه‌نویسی ساخته خواهد شد.
+            </p>
+            <span class="project-status">Coming Soon 🔥</span>
+        </div>
+
+    </div>
+</section>"
         id="services"
     >
 
