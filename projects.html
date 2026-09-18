@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پروژه‌ها | جمال</title>
+
+    <meta name="description"
+        content="پروژه‌های طراحی سایت، تکنولوژی و SEO جمال">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #070b1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: .25;
+            z-index: -1;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        body::before {
+            background: #703cff;
+            top: 0;
+            right: -100px;
+        }
+
+        body::after {
+            background: #00bfff;
+            bottom: 0;
+            left: -100px;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0) scale(1);
+            }
+
+            to {
+                transform: translateY(60px) scale(1.15);
+            }
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 17px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(7, 11, 26, .78);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #c9cede;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* MAIN */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 7%;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 70px;
+            animation: fadeUp 1s ease;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: rgba(139,92,255,.1);
+            border: 1px solid rgba(139,92,255,.35);
+            color: #cdbdff;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 65px);
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg,#8b5cff,#00c6ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: #aeb6ca;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        /* PROJECT GRID */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden;
+            padding: 32px;
+            border-radius: 22px;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.08);
+            backdrop-filter: blur(14px);
+            transition: .4s;
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #703cff;
+            filter: blur(80px);
+            opacity: 0;
+            top: -70px;
+            right: -70px;
+            transition: .4s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139,92,255,.5);
+            box-shadow: 0 20px 50px rgba(80,50,255,.2);
+        }
+
+        .project:hover::before {
+            opacity: .35;
+        }
+
+        .project-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .project h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #aeb6ca;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        /* TAGS */
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            padding: 7px 12px;
+            border-radius: 20px;
+            background: rgba(139,92,255,.12);
+            border: 1px solid rgba(139,92,255,.2);
+            color: #c9bcff;
+            font-size: 13px;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: rgba(0,200,120,.1);
+            color: #78e6b7;
+            font-size: 13px;
+        }
+
+        .status.soon {
+            background: rgba(255,180,0,.1);
+            color: #ffd36a;
+        }
+
+        /* BUTTON */
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 11px;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(90deg,#6c35ff,#008cff);
+            transition: .3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(80,50,255,.35);
+        }
+
+        .button.disabled {
+            background: rgba(255,255,255,.06);
+            color: #777f94;
+            cursor: default;
+        }
+
+        /* BACK */
+
+        .back {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            color: #858da3;
+            border-top: 1px solid rgba(255,255,255,.07);
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media(max-width:800px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                right: 5%;
+                left: 5%;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                padding: 15px;
+                background: rgba(10,15,35,.97);
+                backdrop-filter: blur(20px);
+                border-radius: 18px;
+                border: 1px solid rgba(255,255,255,.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,.06);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            main {
+                padding: 65px 5%;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        🚀 جمال
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <nav id="menu">
+
+        <a href="index.html">
+            خانه
+        </a>
+
+        <a href="about.html">
+            درباره من
+        </a>
+
+        <a href="index.html#services">
+            خدمات
+        </a>
+
+        <a href="projects.html">
+            پروژه‌ها
+        </a>
+
+        <a href="contact.html">
+            تماس
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <div class="hero">
+
+        <div class="badge">
+            🚀 Portfolio
+        </div>
+
+        <h1>
+            پروژه‌های <span>من</span>
+        </h1>
+
+        <p>
+            اینجا پروژه‌هایی که ساخته‌ام، در حال توسعه هستند
+            یا در آینده می‌سازم قرار می‌گیرند.
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="project-icon">
+                🌐
+            </div>
+
+            <span class="status">
+                🟢 در حال توسعه
+            </span>
+
+            <h2>
+                سایت شخصی جمال
+            </h2>
+
+            <p>
+                یک سایت شخصی مدرن برای معرفی من،
+                مهارت‌ها، مسیر یادگیری و پروژه‌هایم.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    HTML
+                </span>
+
+                <span class="tag">
+                    CSS
+                </span>
+
+                <span class="tag">
+                    GitHub Pages
+                </span>
+
+            </div>
+
+            <a href="index.html" class="button">
+                مشاهده پروژه
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="project-icon">
+                🔎
+            </div>
+
+            <span class="status soon">
+                🟡 به‌زودی
+            </span>
+
+            <h2>
+                پروژه SEO
+            </h2>
+
+            <p>
+                یک پروژه تمرینی برای یادگیری سئو،
+                تولید محتوا و بهینه‌سازی صفحات وب.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    SEO
+                </span>
+
+                <span class="tag">
+                    Content
+                </span>
+
+                <span class="tag">
+                    Analytics
+                </span>
+
+            </div>
+
+            <span class="button disabled">
+                به‌زودی
+            </span>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="project-icon">
+                ⚡
+            </div>
+
+            <span class="status soon">
+                🔵 Coming Soon
+            </span>
+
+            <h2>
+                پروژه آینده
+            </h2>
+
+            <p>
+                یک پروژه بزرگ‌تر در حوزه طراحی سایت،
+                برنامه‌نویسی و تکنولوژی.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Web
+                </span>
+
+                <span class="tag">
+                    JavaScript
+                </span>
+
+                <span class="tag">
+                    Future
+                </span>
+
+            </div>
+
+            <span class="button disabled">
+                در آینده
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="back">
+
+        <a href="index.html" class="button">
+            🏠 برگشت به صفحه اصلی
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 | ساخته شده با ❤️ و 🚀
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        document
+            .getElementById("menu")
+            .classList.toggle("active");
+
+    }
+
+</script>
+
+</body>
+
+</html>
