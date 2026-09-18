@@ -6,7 +6,93 @@
 
     <title>جمال | سایت شخصی</title>
     <meta name="description" content="سایت شخصی جمال؛ طراحی سایت، تکنولوژی و SEO">
+/* ===== افکت حرفه‌ای کارت‌ها ===== */
 
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #8b5cff;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0;
+    top: -50px;
+    right: -50px;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 0.35;
+}
+
+.card:hover .icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.card .icon {
+    display: inline-block;
+    transition: 0.35s;
+}
+
+/* ===== افکت دکمه ===== */
+
+.button {
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: rgba(255,255,255,0.18);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.button:hover::before {
+    left: 140%;
+}
+
+/* ===== افکت اسکرول ===== */
+
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: sectionAppear 1s ease forwards;
+}
+
+@keyframes sectionAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== درخشش عنوان ===== */
+
+h1 span {
+    animation: glowText 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+    from {
+        filter: drop-shadow(0 0 2px rgba(139,92,255,0.2));
+    }
+
+    to {
+        filter: drop-shadow(0 0 12px rgba(139,92,255,0.7));
+    }
+}
     <style>
         * {
             margin: 0;
