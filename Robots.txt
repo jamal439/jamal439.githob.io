@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jamal439.github.io/jamal439.githob.io/sitemap.xml
