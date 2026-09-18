@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>جمال | سایت شخصی</title>
-
-    <meta name="description" content="سایت شخصی جمال؛ طراحی سایت، تکنولوژی و یادگیری SEO.">
+    <meta name="description" content="سایت شخصی جمال؛ طراحی سایت، تکنولوژی و SEO">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Tahoma, Arial, sans-serif;
         }
 
         html {
@@ -20,68 +20,76 @@
         }
 
         body {
-            font-family: Tahoma, Arial, sans-serif;
             background: #070b1a;
-            color: white;
+            color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
         }
+
+        /* ===== پس زمینه نئونی ===== */
 
         body::before,
         body::after {
             content: "";
             position: fixed;
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             filter: blur(100px);
             opacity: 0.25;
             z-index: -1;
+            animation: float 8s ease-in-out infinite alternate;
         }
 
         body::before {
-            background: #7c3aed;
-            top: 50px;
-            left: -100px;
+            background: #6c2cff;
+            top: 5%;
+            right: -100px;
         }
 
         body::after {
-            background: #2563eb;
-            bottom: 50px;
-            right: -100px;
+            background: #00bfff;
+            bottom: 5%;
+            left: -100px;
+            animation-delay: 2s;
         }
+
+        @keyframes float {
+            from {
+                transform: translateY(0) scale(1);
+            }
+
+            to {
+                transform: translateY(50px) scale(1.15);
+            }
+        }
+
+        /* ===== هدر ===== */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background: rgba(7, 11, 26, 0.75);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 18px 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            color: #a78bfa;
-            white-space: nowrap;
+            color: #fff;
+            text-decoration: none;
         }
 
         nav {
             display: flex;
-            gap: 22px;
-            flex-wrap: wrap;
+            gap: 25px;
+            align-items: center;
         }
 
         nav a {
@@ -89,87 +97,107 @@
             text-decoration: none;
             font-size: 15px;
             transition: 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #8b5cff;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #a78bfa;
+            color: #fff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== دکمه منوی موبایل ===== */
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* ===== بخش اصلی ===== */
+
+        main {
+            padding: 90px 7% 60px;
         }
 
         .hero {
-            max-width: 1000px;
+            max-width: 900px;
             margin: auto;
-            padding: 120px 20px 100px;
             text-align: center;
+            animation: fadeUp 1s ease;
         }
 
         .badge {
             display: inline-block;
             padding: 10px 18px;
+            border: 1px solid rgba(139,92,255,0.4);
+            background: rgba(139,92,255,0.08);
+            border-radius: 30px;
             margin-bottom: 25px;
-
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid rgba(167, 139, 250, 0.3);
-            border-radius: 50px;
-
-            color: #c4b5fd;
-            font-size: 14px;
+            color: #c9b8ff;
         }
 
-        .hero h1 {
-            font-size: clamp(38px, 7vw, 72px);
+        h1 {
+            font-size: clamp(38px, 7vw, 70px);
             margin-bottom: 25px;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
-        .hero h1 span {
-            color: #a78bfa;
+        h1 span {
+            background: linear-gradient(90deg, #8b5cff, #00c6ff);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         .hero p {
-            color: #b8bdd0;
-            font-size: 18px;
-            line-height: 2;
             max-width: 700px;
             margin: auto;
+            color: #b8bfd3;
+            font-size: 18px;
+            line-height: 2;
         }
 
         .button {
             display: inline-block;
             margin-top: 35px;
             padding: 14px 28px;
-
-            background: linear-gradient(135deg, #7c3aed, #2563eb);
-            color: white;
-
-            text-decoration: none;
             border-radius: 12px;
-            font-weight: bold;
-
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(90deg, #6c35ff, #008cff);
+            box-shadow: 0 10px 30px rgba(80,50,255,0.25);
             transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(124,58,237,0.25);
         }
 
         .button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(124,58,237,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(80,50,255,0.4);
         }
 
-        .section {
+        /* ===== سکشن ها ===== */
+
+        section {
             max-width: 1100px;
-            margin: auto;
-            padding: 80px 20px;
+            margin: 110px auto 0;
         }
 
-        .section h2 {
+        .section-title {
             text-align: center;
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
-
-        .section-intro {
-            text-align: center;
-            color: #9ca3b5;
-            line-height: 2;
+            font-size: 32px;
             margin-bottom: 40px;
         }
 
@@ -180,81 +208,140 @@
         }
 
         .card {
+            padding: 30px;
+            border-radius: 20px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 30px;
-
-            backdrop-filter: blur(15px);
-
-            transition: 0.3s;
+            backdrop-filter: blur(12px);
+            transition: 0.35s;
+            animation: fadeUp 1s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(167,139,250,0.4);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            transform: translateY(-10px);
+            border-color: rgba(139,92,255,0.5);
+            box-shadow: 0 15px 45px rgba(80,50,255,0.18);
         }
 
-        .icon {
+        .card .icon {
             font-size: 40px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .card h3 {
+            margin-bottom: 12px;
             font-size: 21px;
-            margin-bottom: 15px;
         }
 
         .card p {
-            color: #aeb4c7;
+            color: #aeb6cc;
             line-height: 1.9;
         }
 
-        .project-status {
-            display: inline-block;
-            margin-top: 20px;
-            color: #c4b5fd;
-            font-size: 13px;
-        }
+        /* ===== تماس ===== */
 
         .contact-box {
             text-align: center;
-            padding: 45px 20px;
-
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            padding: 50px 25px;
             border-radius: 25px;
+            background: linear-gradient(
+                135deg,
+                rgba(108,44,255,0.12),
+                rgba(0,191,255,0.08)
+            );
+            border: 1px solid rgba(255,255,255,0.08);
         }
+
+        /* ===== فوتر ===== */
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            color: #777e93;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px 20px;
+            margin-top: 100px;
+            color: #858da3;
+            border-top: 1px solid rgba(255,255,255,0.07);
         }
+
+        /* ===== انیمیشن ===== */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== موبایل ===== */
 
         @media (max-width: 800px) {
 
-            .nav-container {
-                flex-direction: column;
+            header {
+                padding: 15px 5%;
+            }
+
+            .menu-btn {
+                display: block;
             }
 
             nav {
-                justify-content: center;
-                gap: 14px;
+                position: absolute;
+                top: 70px;
+                right: 5%;
+                left: 5%;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                padding: 15px;
+                background: rgba(10,15,35,0.96);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255,255,255,0.1);
+                border-radius: 18px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             }
 
-            .hero {
-                padding-top: 80px;
+            nav.active {
+                display: flex;
+                animation: fadeUp 0.3s ease;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.06);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            main {
+                padding: 65px 5% 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                margin-top: 80px;
             }
 
             .cards {
                 grid-template-columns: 1fr;
             }
 
-            .section {
-                padding: 60px 18px;
+            .section-title {
+                font-size: 27px;
             }
         }
     </style>
@@ -262,213 +349,184 @@
 
 <body>
 
-<header>
-    <div class="nav-container">
+    <!-- ===== Header ===== -->
 
-        <div class="logo">
-            جمال 🚀
-        </div>
+    <header>
 
-        <nav>
+        <a href="index.html" class="logo">🚀 جمال</a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="menu">
             <a href="index.html">خانه</a>
             <a href="about.html">درباره من</a>
-            <a href="#services">خدمات</a>
-            <a href="#projects">پروژه‌ها</a>
+            <a href="#services" onclick="closeMenu()">خدمات</a>
+            <a href="#projects" onclick="closeMenu()">پروژه‌ها</a>
             <a href="contact.html">تماس</a>
         </nav>
 
-    </div>
-</header>
+    </header>
 
 
-<main>
+    <!-- ===== Main ===== -->
 
-    <!-- HERO -->
+    <main>
 
-    <section class="hero">
+        <!-- Hero -->
 
-        <div class="badge">
-            ✨ خوش اومدی به سایت من
-        </div>
+        <div class="hero">
 
-        <h1>
-            سلام، من <span>جمال</span> هستم 👋
-        </h1>
-
-        <p>
-            اینجا قراره قدم‌به‌قدم یک سایت واقعی، جذاب و حرفه‌ای بسازیم.
-            این تازه شروع مسیر منه 🚀
-        </p>
-
-        <a href="#projects" class="button">
-            دیدن پروژه‌ها 🚀
-        </a>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section class="section" id="services">
-
-        <h2>
-            خدمات 💻
-        </h2>
-
-        <p class="section-intro">
-            حوزه‌هایی که در مسیر یادگیری و فعالیت روی آن‌ها تمرکز دارم.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">💻</div>
-
-                <h3>
-                    طراحی سایت
-                </h3>
-
-                <p>
-                    ساخت و طراحی صفحات وب مدرن و واکنش‌گرا با HTML و CSS.
-                </p>
+            <div class="badge">
+                ✨ خوش اومدی به سایت من
             </div>
 
+            <h1>
+                سلام، من <span>جمال</span> هستم 👋
+            </h1>
 
-            <div class="card">
-                <div class="icon">🌐</div>
-
-                <h3>
-                    تکنولوژی
-                </h3>
-
-                <p>
-                    یادگیری و تجربه تکنولوژی‌های مختلف در دنیای وب و برنامه‌نویسی.
-                </p>
-            </div>
-
-
-            <div class="card">
-                <div class="icon">🔎</div>
-
-                <h3>
-                    SEO
-                </h3>
-
-                <p>
-                    یادگیری اصول سئو و بهینه‌سازی سایت برای موتورهای جستجو.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section class="section" id="projects">
-
-        <h2>
-            پروژه‌های من 💻🚀
-        </h2>
-
-        <p class="section-intro">
-            پروژه‌هایی که در مسیر یادگیری و توسعه روی آن‌ها کار می‌کنم.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="icon">🌐</div>
-
-                <h3>
-                    سایت شخصی
-                </h3>
-
-                <p>
-                    اولین پروژه وب من که با HTML و CSS ساخته شده و روی GitHub Pages قرار گرفته است.
-                </p>
-
-                <span class="project-status">
-                    در حال توسعه 🚀
-                </span>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">🔎</div>
-
-                <h3>
-                    پروژه SEO
-                </h3>
-
-                <p>
-                    یک پروژه تمرینی برای یادگیری سئو و بهینه‌سازی سایت.
-                </p>
-
-                <span class="project-status">
-                    به‌زودی ✨
-                </span>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">⚡</div>
-
-                <h3>
-                    پروژه آینده
-                </h3>
-
-                <p>
-                    پروژه‌های بزرگ‌تر در ادامه مسیر طراحی سایت و برنامه‌نویسی.
-                </p>
-
-                <span class="project-status">
-                    Coming Soon 🔥
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="section" id="contact">
-
-        <div class="contact-box">
-
-            <h2>
-                تماس با من 📩
-            </h2>
-
-            <p class="section-intro">
-                برای ارتباط بیشتر می‌تونی وارد صفحه تماس بشی.
+            <p>
+                اینجا قراره قدم‌به‌قدم یک سایت واقعی،
+                جذاب و حرفه‌ای بسازیم.
+                این تازه شروع مسیر منه 🚀
             </p>
 
-            <a href="contact.html" class="button">
-                صفحه تماس 📩
+            <a href="#projects" class="button">
+                🚀 دیدن پروژه‌ها
             </a>
 
         </div>
 
-    </section>
 
-</main>
+        <!-- خدمات -->
+
+        <section id="services">
+
+            <h2 class="section-title">
+                🛠️ خدمات
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icon">💻</div>
+                    <h3>طراحی سایت</h3>
+                    <p>
+                        ساخت سایت‌های مدرن، سریع و
+                        واکنش‌گرا برای موبایل و کامپیوتر.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🌐</div>
+                    <h3>تکنولوژی</h3>
+                    <p>
+                        یادگیری و استفاده از تکنولوژی‌های
+                        جدید برای ساخت پروژه‌های واقعی.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🔎</div>
+                    <h3>SEO</h3>
+                    <p>
+                        آماده‌سازی سایت برای دیده‌شدن بهتر
+                        در موتورهای جستجو.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
 
 
-<footer>
+        <!-- پروژه ها -->
 
-    © 2026 | ساخته شده با ❤️ و 🚀
+        <section id="projects">
 
-</footer>
+            <h2 class="section-title">
+                🚀 پروژه‌های من
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icon">🌐</div>
+                    <h3>سایت شخصی</h3>
+                    <p>
+                        پروژه فعلی سایت شخصی من.
+                        در حال توسعه 🚀
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🔎</div>
+                    <h3>پروژه SEO</h3>
+                    <p>
+                        یک پروژه برای یادگیری و
+                        آزمایش تکنیک‌های SEO.
+                        به‌زودی ✨
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>پروژه آینده</h3>
+                    <p>
+                        پروژه‌های بزرگ‌تر در راه هستند.
+                        Coming Soon 🔥
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- تماس -->
+
+        <section>
+
+            <div class="contact-box">
+
+                <h2 class="section-title">
+                    📩 تماس با من
+                </h2>
+
+                <p>
+                    برای ارتباط بیشتر می‌تونی از صفحه تماس استفاده کنی.
+                </p>
+
+                <a href="contact.html" class="button">
+                    📩 صفحه تماس
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===== Footer ===== -->
+
+    <footer>
+        © 2026 | ساخته شده با ❤️ و 🚀
+    </footer>
+
+
+    <!-- ===== JavaScript ===== -->
+
+    <script>
+
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("menu").classList.remove("active");
+        }
+
+    </script>
 
 </body>
 </html>
