@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>درباره من | جمال</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background: #070b1a;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.25;
+            z-index: -1;
+        }
+
+        body::before {
+            background: #7c3aed;
+            top: 50px;
+            left: -100px;
+        }
+
+        body::after {
+            background: #2563eb;
+            bottom: 50px;
+            right: -100px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(7, 11, 26, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #a78bfa;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 100px 20px;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 25px;
+
+            padding: 50px 30px;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .emoji {
+            font-size: 55px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        .intro {
+            color: #b8bdd0;
+            line-height: 2.1;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(167,139,250,0.4);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #aeb4c7;
+            line-height: 1.9;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0;
+
+            padding: 14px 28px;
+
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 12px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777e93;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 70px 18px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            جمال 🚀
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                خانه
+            </a>
+
+            <a href="about.html">
+                درباره من
+            </a>
+
+            <a href="index.html#services">
+                خدمات
+            </a>
+
+            <a href="index.html#projects">
+                پروژه‌ها
+            </a>
+
+            <a href="contact.html">
+                تماس
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <div class="container">
+
+        <div class="box">
+
+            <div class="emoji">
+                👋
+            </div>
+
+            <h1>
+                درباره من
+            </h1>
+
+            <p class="intro">
+                سلام! من جمال هستم.
+                این سایت رو به عنوان شروع یک پروژه بزرگ‌تر ساختم
+                و قراره قدم‌به‌قدم توسعه‌اش بدم و چیزهای جدیدی بهش اضافه کنم.
+            </p>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>
+                        💻 تکنولوژی
+                    </h3>
+
+                    <p>
+                        علاقه‌مند به یادگیری تکنولوژی‌های جدید و دنیای برنامه‌نویسی و وب هستم.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🌐 طراحی سایت
+                    </h3>
+
+                    <p>
+                        در حال یادگیری طراحی و ساخت سایت‌های مدرن و واکنش‌گرا هستم.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🔎 SEO
+                    </h3>
+
+                    <p>
+                        یادگیری سئو و روش‌های بهتر دیده شدن سایت‌ها در موتورهای جستجو یکی از اهداف منه.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        🚀 هدف
+                    </h3>
+
+                    <p>
+                        هدفم اینه که مهارت‌هام رو قدم‌به‌قدم بیشتر کنم و پروژه‌های واقعی بسازم.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a href="index.html" class="button">
+                برگشت به صفحه اصلی 🏠
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 | ساخته شده با ❤️ و 🚀
+
+</footer>
+
+
+</body>
+
+</html>
